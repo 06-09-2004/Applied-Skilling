@@ -3,7 +3,7 @@ import numpy as np
 #generate random exam scores(out of 100)
 exam_scores=np.random.randint(0,100,150)
 #Create a cumulative histogram
-plt.hist(exam_scores,bins=20,cumulative=True,color='blue')
+plt.hist(exam_scores,bins=20,cumulative=True,color='blue',edgecolor='black')
 plt.xlabel('Exam Scores')
 plt.ylabel('Cumulative Number of Students')
 plt.title('Cumulative Histogram of Exam Scores')
