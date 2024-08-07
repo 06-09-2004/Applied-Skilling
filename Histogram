@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+x=[70,50,100,70,50,100,50,50,50,70,50]
+plt.hist(x,orientation="vertical")
+plt.title("Mark Analysis")
+plt.ylabel("No of Students")
+plt.xlabel("Marks")
+plt.show()
