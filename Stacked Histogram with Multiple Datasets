@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
+#Sample data for two datasets
+mark1=np.array([2,4,5,7,9,10,11,13,14,15])
+mark2=np.array([6,7,8,10,11,12,13,14,15,16])
+#creating a stacked histogram with different colors
+plt.hist([mark1,mark2],bins=10,stacked=True,color=['pink','blue'],edgecolor="black")
+plt.xlabel('Marks')
+plt.ylabel('Count')
+plt.title('stacked Histogram with Multiple Datasets')
+plt.legend(['Mark Dataset 1', 'Mark Dataset 2'])
+plt.show()
