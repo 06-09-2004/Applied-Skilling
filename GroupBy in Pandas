@@ -1,0 +1,24 @@
+#GroupBy in pandas
+#Grouping by a single column
+data={
+    'name':['Alice','Bob','Charlie','Alice','Bob'],
+    'age':[25,30,35,25,30],
+    'city':['New York','San Francisco','Los Angeles','New York','San Francisco'],
+    'salary':[70000,80000,120000,70000,80000]
+}
+df=pd.DataFrame(data)
+grouped=df.groupby('name')
+print(grouped.groups)
+#calculate the sum of salaries for each group
+salary_sum= grouped['salary'].sum()
+print(salary_sum)
+age_mean=grouped['age'].mean()
+print(age_mean)
+#grouping by multiple columns
+#group by 'name' and 'city'
+grouped_multiple=df.groupby(['name','city'])
+#calculate the sum of salaries for each group 
+salary_sum_multiple=grouped_multiple['salary'].sum()
+print(salary_sum_multiple)
+
+
