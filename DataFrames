@@ -1,0 +1,29 @@
+#Creating a Data Frame
+data={
+    'Name': ['Alice','Bob','Charlie'],
+    'Age':[25,30,35],
+    'City':['New York','Los Angeles','Chicago']
+}
+df=pd.DataFrame(data)
+print(df)
+print('-------------------')
+#Selecting Columns
+#column wise slicing
+print(df.Name)#Both are same
+print(df['Name'])#if we want only single column
+print(df[['Name','City']])#if we want more than one column
+print('-------------------')
+#row wise slicing
+df=pd.DataFrame(data)
+#select a single row by label
+print(df.loc[0])
+#select multiple rows
+print(df.iloc[0:2])
+print('-------------------')
+
+#Conditional Selection
+#select rows where age is greater than 25
+print(df[df['Age']>25])
+print('-------------------')
+print(df.loc[(df.Name=='Bob')&(df.City=='Los Angeles')])
+
