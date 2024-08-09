@@ -1,0 +1,71 @@
+#pandas Series
+#A series in pandas is a one-dimensional array-like object that to a column in a spreadsheet or a Sql table
+import pandas as pd
+#Series generated from a list
+a=[1,7,2]
+myvar=pd.Series(a)
+print(a)
+print(myvar)
+print('---------------------')
+#labels
+print(myvar[0])
+print('---------------------')
+#Assigning seperate labels to values in the statement
+myvar2=pd.Series(a,index=["x","y","z"])
+print(myvar2)
+print(myvar2["y"])
+print('---------------------')
+#Series generated from dictionary
+calories={"day1":420,"day 20":380,"day 3":390}
+myvar=pd.Series(calories)
+print(myvar)
+print('----------------------')
+myvar=pd.Series(calories,index=['day1','day2'])
+print(myvar)
+print('----------------------')
+#series generated from Scalar Value
+Series=pd.Series(5,index=[0,1,2,3])
+print(Series)
+print('----------------------')
+
+#integer Series 
+int_series=pd.Series([1,2,3,4])
+print(int_series)
+print('---------------------')
+#float series
+float_series=pd.Series([1.1,2.2,3.3,4.4])
+print(float_series)
+print('---------------------')
+#String Series
+string_series=pd.Series(['a','b','c','d'])
+print(string_series)
+print('---------------------')
+#label based indexing
+data={'a':10,'b':20,'c':30}
+series=pd.Series(data)
+print(series['a'])
+print(series[['a','c']])
+print('---------------------')
+#Boolean indexing
+data=[10,20,30,40,50]
+series=pd.Series(data)
+#Acsess elements greater than 25 
+print(series[series>25])
+print('----------------------')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
