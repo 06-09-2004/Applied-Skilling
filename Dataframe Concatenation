@@ -1,0 +1,112 @@
+#first code:
+import pandas as pdimport pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['jai','princi','gaurav','anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allaahabad','kannuaj'],
+       'qualification':['Msc','ma','mca','phd']}
+#define a dictionary containing employee data
+data2={'Name':['Abhi','ayushi','dhiraj','hitesh'],
+       'age':[17,14,12,52],
+       'Address':['Nagpur','kanpur','Allahabad','kannuaj'],
+       'qualification':['btech','b.a','bcom','b.hons']}
+#convert the dictionary into dataframe
+df=pd.DataFrame(data1,index=[0,1,2,3])
+#convert the dictionary into dataframe
+df1=pd.DataFrame(data2,index=[2,3,6,7])
+print(df,"\n\n",df1)
+#using a .concat method 
+res1=pd.concat([df,df1])
+res1
+
+
+#second code:
+import pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['jai','princi','gaurav','anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allaahabad','kannuaj'],
+       'qualification':['Msc','ma','mca','phd']}
+#define a dictionary containing employee data
+data2={'Name':['Abhi','ayushi','dhiraj','hitesh'],
+       'age':[17,14,12,52],
+       'Address':['Nagpur','kanpur','Allahabad','kannuaj'],
+       'qualification':['btech','b.a','bcom','b.hons']}
+#convert the dictionary into dataframe
+df=pd.DataFrame(data1,index=[0,1,2,3])
+#convert the dictionary into dataframe
+df1=pd.DataFrame(data2,index=[2,3,6,7])
+print(df,"\n\n",df1)
+#applying concat with axes
+#join="inner" we get the intersection of dataframe
+res2=pd.concat([df,df1],axis=1,join='inner')
+res2
+
+#third code:
+#concatenating dataframes by ignoring indexes
+import pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['jai','princi','gaurav','anuj'],
+       'Age':[27,24,22,32],
+       'Address':['Nagpur','kanpur','Allaahabad','kannuaj'],
+       'qualification':['Msc','ma','mca','phd']}
+#define a dictionary containing employee data
+data2={'Name':['Abhi','ayushi','dhiraj','hitesh'],
+       'age':[17,14,12,52],
+       'Address':['Nagpur','kanpur','Allahabad','kannuaj'],
+       'qualification':['btech','b.a','bcom','b.hons']}
+#convert the dictionary into dataframe
+df=pd.DataFrame(data1,index=[0,1,2,3])
+#convert the dictionary into dataframe
+df1=pd.DataFrame(data2,index=[2,3,6,7])
+print(df,"\n\n",df1)
+res=pd.concat([df,df1], ignore_index=True)
+res
+
+#fourth code:
+#concatenating a mix of series
+#importing pandas module
+import pandas as pd
+#define a dictionary containing employee data
+data1={'Name':['jai','princi','gaurav','anu'],
+       'age':[27,24,22,32],
+       'address':['nagpur','kanpur','allahabad','kannuaj'],
+       'qualification':['msc','ma','mca','phd']}
+#convert the dictionary  into dataframe
+df=pd.DataFrame(data1,index=[0,1,2,3])
+#creating a series
+s1=pd.Series([1000,2000,3000,4000],name='salary')
+print(df,"\n\n",s1)
+#combining series and dataframe
+res=pd.concat([df,s1],axis=1)
+res
+
+#fifth code:
+#Merging the dataframes using one key value
+#importing pandas module
+import pandas as pd
+#define a dictionary containing employee data
+data1={'key':['k0','k1','k2','k3'],
+       'Name':['jai','princi','gaurav','anu'],
+       'age':[27,24,22,32],}
+#define a dictionary containing employee data
+data2={'key':['k0','k1','k2','k3'],
+       'Address':['Nagpur','Kanpur','Allahabad','kannuaj'],
+       'Qualification':['btech','b.a','bcom','b.hons']}
+#convert the dictionaty into dataframe
+df=pd.DataFrame(data1)
+#convert the dictionary into dataframe
+df1=pd.DataFrame(data2)
+print(df,"\n\n",df1)
+#using .merge() function
+res=pd.merge(df,df1,on='key')
+res
+
+
+
+
+
+
+
+
+
